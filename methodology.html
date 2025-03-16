@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/fmd8sbk.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology</title>
+  <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Main title styling */
+    .main-title {
+      font-size: 3.5rem;
+      text-align: center;
+      font-family: "adobe-garamond-pro", serif;
+      font-weight: 400;
+      font-style: italic;
+      color: #edd2a4;
+      padding: 5vh 0;
+    }
+
+    /* Set background color and remove margins */
+    body {
+      background-color: #111111; /* Dark background */
+      color: #edd2a4; /* Light gold text */
+      margin: 0;
+      font-family: "adobe-garamond-pro", serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.6;
+    }
+
+    /* Styling for the clickable logo and title */
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Inherit the banner text color */
+    }
+
+    .logo-link h1 {
+      margin: 0; /* Ensure proper spacing for the title */
+    }
+
+    .logo-link:hover {
+      text-decoration: none; /* Keep no underline on hover */
+    }
+    
+    /* Banner styling */
+    .banner {
+      background-color: #222222; /* Dark banner */
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .banner .title {
+      font-size: 1.8rem;
+      font-family: "orpheuspro", serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      flex: 1;
+      color: #edd2a4;
+      text-align: left;
+    }
+
+    /* Navigation links */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex: 2;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #edd2a4;
+      font-family: "orpheuspro", serif;
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    /* Hover effect for links */
+    .nav-links a:hover,
+    .nav-links a:active {
+      text-decoration: underline;
+    }
+
+    /* Mission Statement Section */
+    .mission-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 80%;
+      flex-wrap: wrap;  /* Allows wrapping to the next line on smaller screens */
+    }
+
+    .mission-container {
+      flex: 1;
+      background-color: #222222; /* Dark grey background */
+      padding: 20px;
+      border-radius: 10px; /* Optional: for rounded corners */
+      text-align: left; /* Align text to the left */
+      box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+
+    .mission-statement {
+      font-size: 2rem;
+      font-weight: 400;
+      font-style: normal;
+      color: #edd2a4;
+      margin: 0;
+    }
+
+    .mission-paragraph {
+      font-size: 1.25rem;
+      font-weight: 400;
+      font-style: normal;
+      color: #edd2a4;
+      margin: 0;
+    }
+
+    .mission-image {
+      flex: 1;
+      border-radius: 10px;
+      width: 300px; /* Adjust the width */
+      height: auto; /* Keep the aspect ratio */
+    }
+
+    /* Hamburger menu style */
+    .hamburger-menu {
+      display: none;
+      z-index: 10000;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      top: 20px;
+      right: 20px; /* Move to the right of the screen */
+    }
+
+    .hamburger-menu .bar {
+      width: 100%;
+      height: 5px;
+      background-color: #edd2a4; /* Soft gold bars */
+      border-radius: 5px;
+    }
+
+    /* Side Tab Styles */
+    .side-tab {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #222222; /* Dark background for side tab */
+      overflow-x: hidden;
+      transition: 0.3s;
+      z-index: 9999;
+      padding-top: 60px;
+    }
+
+    .side-tab a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #edd2a4;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-tab a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Media Icon Styling */
+    .social-icon {
+      width: 100px;
+      height: 100px;
+      margin: 5px;
+      transition: transform 0.3s, filter 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    /* Hover effect for mission images */
+    .mission-image {
+      transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition */
+    }
+
+    .mission-image:hover {
+      transform: scale(1.05); /* Slight zoom-in effect */
+      filter: brightness(1.2); /* Slightly brighten the image */
+    }
+
+
+    /* Responsive Media Queries */
+    @media (max-width: 1024px) {
+      .hamburger-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none; /* Hide top nav */
+      }
+
+      .mission-section {
+        flex-direction: row;  /* Keep images and text side by side even on tablets */
+        flex-wrap: wrap;  /* Allow wrapping of content */
+      }
+
+      .mission-image {
+        width: 250px;  /* Adjust the image width for tablets */
+      }
+
+      .mission-container {
+        padding: 15px;  /* Reduce padding for smaller screens */
+      }
+
+      .mission-statement {
+        font-size: 1.8rem; /* Slightly smaller font size */
+      }
+
+      .mission-paragraph {
+        font-size: 1.1rem; /* Slightly smaller font size */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .mission-section {
+        flex-direction: row;  /* Keep images and text side by side */
+        gap: 10px;  /* Reduce the gap for small screens */
+      }
+
+      .mission-image {
+        width: 200px;  /* Adjust image width for small screens */
+      }
+
+      .mission-container {
+        flex: 1;
+        padding: 10px;  /* Adjust padding for smaller screens */
+      }
+      
+      .mission-statement {
+        font-size: 1.2rem; /* Much smaller font size */
+      }
+
+      .mission-paragraph {
+        font-size: 0.9rem; /* Much smaller font size */
+      }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Banner with title and navigation links -->
+  <nav class="banner">
+    <a href="website.html" class="logo-link">
+      <h1 class="title">thefashionstockmarket</h1>
+    </a>
+    <div class="nav-links">
+      <a href="trends.html" aria-label="Fashion Trends">TRENDS</a>
+      <a href="celebrity.html" aria-label="Celebrities">CELEBRITIES</a>
+      <a href="brand.html" aria-label="Fashion Brands">BRANDS</a>
+      <a href="runway.html" aria-label="Runways and Events">RUNWAYS & EVENTS</a>
+    </div>
+  </nav>
+
+  <!-- Hamburger Icon for Mobile -->
+  <div class="hamburger-menu" onclick="toggleSideTab()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Side Tab -->
+  <div class="side-tab" id="sideTab">
+    <a href="trends.html">TRENDS</a>
+    <a href="celebrity.html">CELEBRITIES</a>
+    <a href="brand.html">BRANDS</a>
+    <a href="runway.html">RUNWAYS & EVENTS</a>
+  </div>
+
+  <script>
+    function toggleSideTab() {
+      const sideTab = document.getElementById('sideTab');
+      if (sideTab.style.left === '0px') {
+        sideTab.style.left = '-250px';
+      } else {
+        sideTab.style.left = '0px';
+      }
+    }
+  </script>
+
+  <!-- Main content title -->
+  <h1 class="main-title">Methodology</h1>
+
+  <!-- Mission Section with Image -->
+  <div class="mission-section">
+    <img src="methodology/1.jpg" alt="Fashion Image 1" class="mission-image">
+    <div class="mission-container">
+      <p class="mission-statement">
+        Step 1: Data Collection
+      </p>
+      <p class="mission-paragraph">
+        We begin by gathering data from multiple sources which include social media platforms, fashion shows, e-commerce websites, etc. Gathering a vast set of data ensures a varied dataset that reflects unbiased global fashion trends. The incorporation of historical fashion data is incorporated to understand cyclical trends. The data we collect include images, text, user engagement metrics, product descriptions, and influencer posts. We also analyze fashion-related hashtags, keywords, and search trends to capture emerging movements.
+      </p>
+    </div>
+    </div>
+  </div>
+  <div class="mission-section">
+    <div class="mission-container">
+      <p class="mission-statement">
+       Step 2: Data Processing
+      </p>
+      <p class="mission-paragraph">
+        Once the data is collected, it goes through a preprocessing phase to ensure its quality and relevance. Irrelevant or noisy data, duplicates, and low-quality images are filtered out. Next, the data is standardized across different sources to maintain consistency and uniformity. Finally, fashion items are systematically categorized into specific groups, such as menswear, womenswear, accessories, and footwear, to enable a more precise and focused analysis.
+      </p>
+    </div>
+    <img src="methodology/2.jpg" alt="Fashion Image 2" class="mission-image">
+    </div>
+    </div>
+  </div>
+  <div class="mission-section">
+    <img src="methodology/3.jpg" alt="Fashion Image 3" class="mission-image">
+    <div class="mission-container">
+      <p class="mission-statement">
+        Step 3: AI Analysis
+      </p>
+      <p class="mission-paragraph">
+        We employ a variety of advanced AI models and algorithms to extract meaningful insights and predict emerging fashion trends. Leveraging tools like image recognition models, we analyze fashion images to identify styles, colors, patterns, and other key attributes. In addition, we utilize Natural Language Processing (NLP) techniques to analyze text data from sources such as product descriptions, blog posts, and social media captions. By interpreting language patterns and sentiment, these models uncover emerging keywords, themes, and consumer preferences. Finally, we conduct sentiment analysis on social media posts and reviews to gauge public opinion on trends, colors, and designs. This sentiment data is integrated into our overall predictions to provide a comprehensive and nuanced understanding of the fashion landscape.
+      </p>
+    </div>
+    </div>
+  </div>
+  <div class="mission-section">
+    <div class="mission-container">
+      <p class="mission-statement">
+        Step 4: Trend Forecasting
+      </p>
+      <p class="mission-paragraph">
+        After processing and analyzing the data, we generate actionable insights into current and future fashion trends. Our models identify emerging patterns by evaluating various factors, including mention frequency, shifts in search volume, and social media engagement. By analyzing correlations across images, text, and sentiment data, we can accurately forecast the next major fashion movements. As new data becomes available, our models continuously adapt and refine their predictions, ensuring they remain up-to-date, relevant, and reliable in the ever-evolving fashion world.
+      </p>
+    </div>
+    <img src="methodology/4.jpg" alt="Fashion Image 4" class="mission-image">
+    </div>
+    </div>
+  </div>
+</body>
+</html>

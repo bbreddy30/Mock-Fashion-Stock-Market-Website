@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://use.typekit.net/fmd8sbk.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Trends</title>
+  <style>
+    /* Smooth scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Main title styling */
+    .main-title {
+      font-size: 3.5rem;
+      text-align: center;
+      font-family: "adobe-garamond-pro", serif;
+      font-weight: 400;
+      font-style: italic;
+      color: #edd2a4;
+      padding: 5vh 0;
+    }
+
+    /* Set background color and remove margins */
+    body {
+      background-color: #111111; /* Dark background */
+      color: #edd2a4; /* Light gold text */
+      margin: 0;
+      font-family: "orpheuspro", serif;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.6;
+    }
+
+      /* Styling for the clickable logo and title */
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none; /* Remove underline */
+      color: inherit; /* Inherit the banner text color */
+    }
+
+    .logo-link h1 {
+      margin: 0; /* Ensure proper spacing for the title */
+    }
+
+    .logo-link:hover {
+      text-decoration: none; /* Keep no underline on hover */
+    }
+    
+    /* Banner styling */
+    .banner {
+      background-color: #222222; /* Dark banner */
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .banner .title {
+      font-size: 1.8rem;
+      font-family: "orpheuspro", serif;
+      font-weight: 400;
+      font-style: normal;
+      margin: 0;
+      flex: 1;
+      color: #edd2a4;
+      text-align: left;
+    }
+
+    /* Navigation links */
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      flex: 2;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #edd2a4;
+      font-family: "orpheuspro", serif;
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    /* Hover effect for links */
+    .nav-links a:hover,
+    .nav-links a:active {
+      text-decoration: underline;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #222222;
+      padding: 20px 40px;
+      font-family: "adobe-garamond-pro", serif;
+      font-weight: 400;
+      font-size: 1.0rem;
+      color: #edd2a4;
+      margin-top: 12vh;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    /* Footer Title */
+    .footer-title {
+      font-family: "orpheuspro", serif;
+      font-size: 2.0rem;
+      color: #edd2a4;
+      margin-bottom: 10px;
+      margin-top: 2vh;
+      text-align: left;
+      width: 100%;
+      margin-left: 150px;
+    }
+
+    .footer-subtext {
+      margin-left: 150px;
+    }
+
+    .social-links {
+      margin-left: -335px;
+      margin-top: 75px;
+    }
+
+    /* Footer Center Content */
+    .footer-center {
+      text-align: left;
+      flex: 1;
+      margin-top: -55px;
+      margin-left: 500px;
+    }
+
+    .footer-center p {
+      margin: 0;
+    }
+
+    .footer-center a {
+      display: inline-block;
+      margin-top: 20px;
+      color: #edd2a4;
+      font-family: "adobe-garamond-pro", serif;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    .footer-center a:hover {
+      color: white;
+    }
+
+    /* Footer Right Content */
+    .footer-right {
+      text-align: left;
+      flex: 1;
+      margin-top: -55px;
+      margin-right: -50px;
+    }
+
+    .footer-right p {
+      margin: 0;
+    }
+
+    .footer-right a {
+      display: block;
+      margin-top: 20px;
+      color: #edd2a4;
+      font-family: "adobe-garamond-pro", serif;
+      font-weight: 400;
+      text-decoration: none;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    .footer-right a:hover {
+      color: white;
+    }
+
+    /* Hamburger menu style */
+    .hamburger-menu {
+      display: none;
+      z-index : 10000;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      top: 20px;
+      right: 20px; /* Move to the right of the screen */
+    }
+
+    .hamburger-menu .bar {
+      width: 100%;
+      height: 5px;
+      background-color: #edd2a4; /* Soft gold bars */
+      border-radius: 5px;
+    }
+
+    /* Side Tab Styles */
+    .side-tab {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #222222; /* Dark background for side tab */
+      overflow-x: hidden;
+      transition: 0.3s;
+      z-index: 9999;
+      padding-top: 60px;
+    }
+
+    .side-tab a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #edd2a4;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-tab a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 1440px) {
+      /* Larger Laptops */
+      .main-title {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      /* Tablets */
+      .main-title {
+        font-size: 2.5rem;
+      }
+
+      .hamburger-menu {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none; /* Hide top nav */
+      }
+
+      .side-tab {
+        left: -250px; /* Start offscreen */
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .footer-center, .footer-right {
+        display: none;
+      }
+
+      .footer-title {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .footer-subtext {
+        font-size: 1rem;
+        margin: 10px 0;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center; /* Center social icons */
+        margin-top: 10px;
+        margin-left:-10px;
+      }
+
+      .social-icon {
+        margin: 0 10px; /* Adjust spacing between icons */
+      }
+    }
+
+    @media (max-width: 768px) {
+      /* Phones */
+      footer {
+        padding: 10px 20px;
+      }
+    } 
+
+    @media (max-width: 480px) {
+      /* Small Phones */
+      .main-title {
+        font-size: 2rem;
+      }
+
+      .footer-title {
+        font-size: 1.2rem;
+      }
+
+      footer {
+        font-size: 1.2rem;
+        padding: 15px 20px;
+      }
+
+      footer .button {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .banner {
+        padding: 10px;
+      }
+    }
+
+    /* Social Media Icon Styling */
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      margin: 5px;
+      transition: transform 0.3s, filter 0.3s;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner with title and navigation links -->
+  <nav class="banner">
+    <a href="website.html" class="logo-link">
+      <h1 class="title">thefashionstockmarket</h1>
+    </a>
+    <div class="nav-links">
+      <a href="trends.html" aria-label="Fashion Trends">TRENDS</a>
+      <a href="celebrity.html" aria-label="Celebrities">CELEBRITIES</a>
+      <a href="brand.html" aria-label="Fashion Brands">BRANDS</a>
+      <a href="runway.html" aria-label="Runways and Events">RUNWAYS & EVENTS</a>
+    </div>
+  </nav>
+
+  <!-- Hamburger Icon for Mobile -->
+  <div class="hamburger-menu" onclick="toggleSideTab()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Side Tab -->
+  <div class="side-tab" id="sideTab">
+    <a href="trends.html">TRENDS</a>
+    <a href="celebrity.html">CELEBRITIES</a>
+    <a href="brand.html">BRANDS</a>
+    <a href="runway.html">RUNWAYS & EVENTS</a>
+  </div>
+
+  <script>
+    function toggleSideTab() {
+      const sideTab = document.getElementById('sideTab');
+      if (sideTab.style.left === '0px') {
+        sideTab.style.left = '-250px';
+      } else {
+        sideTab.style.left = '0px';
+      }
+    }
+  </script>
+
+  <!-- Main content title -->
+  <h1 class="main-title">Fashion Trends</h1>
+
+  <!-- Footer -->
+  <footer>
+    <p class="footer-title">
+      thefashionstockmarket
+    </p>
+    <p class="footer-subtext">
+      ANALYZING THE FASHION WORLD DAILY :)
+    </p>
+    <div class="social-links">
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+        <img src="icons/instagram-logo.png" alt="Instagram Logo" class="social-icon">
+      </a>
+      <a href="mailto:thefashionstockmarket@gmail.com" aria-label="Email">
+        <img src="icons/email-logo.png" alt="Email Logo" class="social-icon">
+      </a>
+    </div>
+    <div class="footer-center">
+      <p><em>MORE FROM FASHION STOCK MARKET</em></p>
+      <div><a href="about.html">ABOUT US</a></div>
+      <div><a href="methodology.html">METHODOLOGY</a></div>
+    </div>
+    <div class="footer-right">
+      <p><em>SEE MORE DATA</em></p>
+      <a href="trends.html">TRENDS</a>
+      <a href="celebrity.html">CELEBRITIES</a>
+      <a href="brand.html">BRANDS</a>
+      <a href="runway.html">RUNWAYS & EVENTS</a>
+    </div>
+  </footer>     
+</body>
+</html>
