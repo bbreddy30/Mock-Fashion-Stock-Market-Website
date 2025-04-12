@@ -4,6 +4,6 @@ A minimalist and classy mock website for The Fashion Stock Market, designed usin
 <img src="logo.png" align="center" width="500">
 
 
-<img src="screenshot1.png" align="left" width="500">
+<img src="screenshot1.jpeg" align="left" width="500">
 
-<img src="screenshot2.png" align="right" width="500">
+<img src="screenshot2.jpeg" align="right" width="500">
